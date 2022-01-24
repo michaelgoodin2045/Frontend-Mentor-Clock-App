@@ -8,7 +8,7 @@ const Location = () => {
 
   useEffect(() => {
     const getLocation = async () => {
-      const url = process.env.REACT_APP_GEOLOCATION_URL;
+      const url = 'https://freegeoip.app/json/';
       const response = await fetch(url);
       const data = await response.json();
       setCity(data.city);

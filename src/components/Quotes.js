@@ -6,7 +6,7 @@ const Quotes = () => {
   const [author, setAuthor] = useState();
 
   const getQuote = useCallback(async () => {
-    const url = process.env.REACT_APP_QUOTES_URL;
+    const url = 'https://api.quotable.io/random';
     const response = await fetch(url);
     const data = await response.json();
     setQuote(data.content);

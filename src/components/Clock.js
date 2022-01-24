@@ -28,7 +28,7 @@ const Clock = () => {
         });
         setClockState(time);
       }, 1000);
-      const url = process.env.REACT_APP_WORLDTIME_URL;
+      const url = 'http://worldtimeapi.org/api/ip';
       const response = await fetch(url);
       const data = await response.json();
       setTimezone(data.abbreviation);
