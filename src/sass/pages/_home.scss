@@ -1,0 +1,10 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  color: $clr--white;
+  font-family: $ff--inter;
+  font-size: 1rem;
+}

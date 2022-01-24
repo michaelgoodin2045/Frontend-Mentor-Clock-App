@@ -1,0 +1,73 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.clock-box {
+  max-width: 100%;
+  height: 185px;
+  margin: 0 7%;
+  grid-row: 3;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include a.breakpoint(tablet) {
+    height: 231px;
+    margin: 0 8.33%;
+  }
+  @include a.breakpoint(desktop) {
+    height: 288px;
+    margin: 0 11.45%;
+  }
+  & .clock-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 6.25rem;
+    & .clock {
+      font-size: clamp(3rem, 10px + 24vw, 6.25rem);
+      font-weight: 700;
+      letter-spacing: -0.15625rem;
+      @include a.breakpoint(tablet) {
+        font-size: 10.93rem;
+        letter-spacing: -0.27375rem;
+      }
+      @include a.breakpoint(desktop) {
+        font-size: 12.5rem;
+        letter-spacing: -0.3125rem;
+      }
+    }
+    & .timezone {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      line-height: 1.75rem;
+      margin-left: 0.8125rem;
+      padding-top: calc(3.125rem + 0.465rem);
+      @include a.breakpoint(tablet) {
+        font-size: 2rem;
+        padding-top: 6.875rem;
+      }
+      @include a.breakpoint(desktop) {
+        font-size: 2.5rem;
+        padding-top: 7.5rem;
+      }
+    }
+  }
+  & .location-box {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.1875rem;
+    text-transform: uppercase;
+    line-height: 1.5625rem;
+    @include a.breakpoint(tablet) {
+      font-size: 1.125rem;
+      letter-spacing: 0.225rem;
+      line-height: 1.75rem;
+    }
+    @include a.breakpoint(desktop) {
+      font-size: 1.5rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+}

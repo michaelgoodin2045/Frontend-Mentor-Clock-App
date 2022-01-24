@@ -1,0 +1,62 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.morning {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('./assets/mobile/bg-image-daytime.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include a.breakpoint(tablet) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('./assets/tablet/bg-image-daytime.jpg');
+  }
+  @include a.breakpoint(desktop) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('./assets/desktop/bg-image-daytime.jpg');
+  }
+}
+
+.evening {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('./assets/mobile/bg-image-nighttime.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include a.breakpoint(tablet) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('./assets/tablet/bg-image-nighttime.jpg');
+  }
+  @include a.breakpoint(desktop) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('./assets/desktop/bg-image-nighttime.jpg');
+  }
+}

@@ -1,0 +1,93 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.button-box {
+  grid-row: 5;
+  grid-column: 1;
+  margin: 0 7%;
+  height: 40px;
+  @include a.breakpoint(tablet) {
+    margin: 0 8.33%;
+    width: 146px;
+    height: 56px;
+  }
+  @include a.breakpoint(desktop) {
+    grid-row: 3;
+    grid-column: 2;
+    margin: 0;
+    margin-top: 230px;
+  }
+  &.more-close {
+    & .button {
+      & .more-btn {
+        & .btn-value-less {
+          display: none;
+        }
+        & .arrow {
+          margin-bottom: 2px;
+          transform: rotate(180deg);
+          @include a.breakpoint(tablet) {
+            margin-right: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+  &.more-open {
+    & .button {
+      & .more-btn {
+        & .btn-value-more {
+          display: none;
+        }
+        & .arrow {
+          margin-top: 2px;
+          @include a.breakpoint(tablet) {
+            margin-right: 0.25rem;
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+  }
+  & .button {
+    & .more-btn {
+      width: 115px;
+      height: 40px;
+      border-radius: 28px;
+      border: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+      @include a.breakpoint(tablet) {
+        width: 146px;
+        height: 56px;
+      }
+      & .btn-text {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.2344rem;
+        text-transform: uppercase;
+        margin-left: 0.75rem;
+        color: $clr--hover;
+        @include a.breakpoint(tablet) {
+          font-size: 1rem;
+          letter-spacing: 0.3125rem;
+          margin-left: 1rem;
+          margin-top: 4px;
+        }
+      }
+      & .arrow {
+        & img {
+          width: 2rem;
+          @include a.breakpoint(tablet) {
+            width: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

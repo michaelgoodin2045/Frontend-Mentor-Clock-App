@@ -1,0 +1,127 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.morning {
+  & .box {
+    & .more-box {
+      &.show-more {
+        background: $clr--info-bg-morn;
+        color: $clr--dark-gray;
+      }
+    }
+  }
+}
+.evening {
+  & .box {
+    & .more-box {
+      &.show-more {
+        background: $clr--info-bg-eve;
+        color: $clr--white;
+      }
+    }
+  }
+}
+
+.more-box {
+  display: none;
+  &.show-more {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(40.7742px);
+    grid-row: 7;
+    grid-column: 1;
+    @include a.breakpoint(desktop) {
+      grid-row: 5;
+      grid-column: 1 / span 2;
+    }
+    & .expand-box {
+      width: 86%;
+      min-height: 62.5%;
+      margin: 48px 7%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      @include a.breakpoint(tablet) {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-rows: 1fr 77px 48px 77px 1fr;
+        grid-template-columns: 8.33% 39.4% 8.33% 22.18% 1fr;
+      }
+      @include a.breakpoint(desktop) {
+        grid-template-columns: 8.97% 46.18% 0 180px 1fr;
+        grid-template-rows: 1fr 105px 42px 105px 1fr;
+      }
+
+      & .stat-box {
+        width: 100%;
+        height: 17.5%;
+        margin-bottom: 16px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        @include a.breakpoint(tablet) {
+          width: auto;
+          height: auto;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 0;
+        }
+        & .info-title {
+          font-size: 0.625rem;
+          line-height: 1.75rem;
+          letter-spacing: 0.125rem;
+          text-transform: uppercase;
+          @include a.breakpoint(tablet) {
+            font-size: 0.8125rem;
+            letter-spacing: 0.1625rem;
+          }
+          @include a.breakpoint(desktop) {
+            font-size: 0.9375rem;
+            letter-spacing: 0.1875rem;
+          }
+        }
+        & .info-stat {
+          font-size: clamp(
+            0.75rem,
+            calc(0.75rem + ((1vw - 3.2px) * 26.6667)),
+            1.25rem
+          );
+          font-weight: 700;
+          @include a.breakpoint(tablet) {
+            font-size: 2.5rem;
+          }
+          @include a.breakpoint(desktop) {
+            font-size: 3.5rem;
+            margin-top: 0.5625rem;
+          }
+        }
+      }
+      & .zone {
+        grid-row: 2;
+        grid-column: 2;
+      }
+      & .d-week {
+        grid-row: 2;
+        grid-column: 4;
+      }
+      & .d-year {
+        grid-row: 4;
+        grid-column: 2;
+      }
+      & .week {
+        grid-row: 4;
+        grid-column: 4;
+      }
+    }
+  }
+}
